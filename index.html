@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://unpkg.com/dropbox@4.0.7/dist/Dropbox-sdk.min.js"></script>
+    <script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script src="/scripts/cookies.js"></script>
+    <link href="/res/favicon/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32">
+    <link href="/res/favicon/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16">
+    <link href="/res/favicon/safari-pinned-tab.svg" rel="mask-icon" color="#87ceeb">
+    <link href="/res/favicon/favicon.ico" rel="shortcut icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fontlibrary.org/face/bellota" rel="stylesheet" type="text/css"/>
+    <link href="/styles/dist/style.min.css" rel="stylesheet" type="text/css">
+    <title>Todokanai TL</title>
+  </head>
+  <body>
+    <header style="background-image: url('/res/images/header-home.png')">
+      <nav id="links">
+        <a href="/">Home</a>
+        <span class="divider">&#x2744;</span>
+        <a href="/patch">Patch</a>
+        <span class="divider">&#x2744;</span>
+        <a href="/news">News</a>
+        <span class="divider">&#x2744;</span>
+        <a href="/faq">FAQ</a>
+        <span class="divider">&#x2744;</span>
+        <a href="/staff">Staff</a>
+        <span class="divider">&#x2744;</span>
+        <a href="/chat">Chat</a>
+      </nav>
+    </header>
+    <div id="wrapper">
+      <h2 class="todokanai full">Todokanai Translations</h2>
+      <h2 class="todokanai short">Todokanai TL</h2>
+      <img src="/res/images/logo.png" height="80" width="80" alt="Snowflake"/>
+      <div class="intro">Welcome to our website!</div>
+      <div class="intro">We are currently translating White Album 2 into English.</div>
+      <div id="progress" class="intro">
+        <noscript>
+          You can see the progress <a style="color: royalblue" href="https://www.dropbox.com/s/yxne647vi3vh7tu/stats.txt?raw=1" target="_blank" rel="noopener">here</a>.
+        </noscript>
+      </div>
+      <script src="/scripts/progress.min.js"></script>
+      <hr>
+      <h3>Links</h3>
+      <ul>
+        <li><a href="https://discord.me/TodokanaiTL" rel="noopener" target="_blank">Discord</a></li>
+        <li><a href="https://github.com/TodokanaiTL" rel="noopener" target="_blank">GitHub</a></li>
+        <li><a href="https://vndb.org/p6756" rel="noopener" target="_blank">VNDB</a></li>
+      </ul>
+      <div id="cookies" style="display: none">
+        <div class="content">
+          <a class="close" href="#">&times;</a>
+          <p>
+            We use cookies to cache requests made to Dropbox for the
+            <a href="https://www.dropbox.com/s/yxne647vi3vh7tu/stats.txt?raw=1" rel="noopener" target="_blank">progress stats</a>,
+            and to GitHub for the <a href="https://github.com/TodokanaiTL/WA2EnglishPatch/releases/latest" rel="noopener" target="_blank">latest patch</a>.
+            Disqus also uses some of its own <a href="https://help.disqus.com/user-profile/use-of-cookies" rel="noopener" target="_blank">cookies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
