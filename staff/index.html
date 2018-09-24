@@ -36,21 +36,18 @@
       </ul>
       <h3>Translators</h3>
       <ul class="members">
-        <li><a href="https://www.baka-tsuki.org/project/index.php?title=User:KagetsukiArk" rel="noopener">Fujikura</a></li>
         <li class="leader"><a href="https://www.baka-tsuki.org/project/index.php?title=User:Noir" rel="noopener">Gauche Suede</a></li>
         <li><a href="https://www.baka-tsuki.org/project/index.php?title=User:Isaac_/_%E6%98%9F%E6%9D%B1" rel="noopener">Isaac / &#x661F;&#x6771;</a></li>
-        <li><a href="https://www.baka-tsuki.org/project/index.php?title=User:Jonathanasdf" rel="noopener">jonathanasdf</a></li>
-        <li><a href="https://www.baka-tsuki.org/project/index.php?title=User:SirCumference" rel="noopener">SirCumference</a></li>
+        <li><a href="https://www.baka-tsuki.org/project/index.php?title=User:KagetsukiArk" rel="noopener">Fujikura</a></li>
       </ul>
       <h3>Editors</h3>
       <ul class="members">
-        <li><a href="https://www.baka-tsuki.org/project/index.php?title=User:Ce1545" rel="noopener">ce1545</a></li>
         <li><a href="https://www.baka-tsuki.org/project/index.php?title=User:Dokdek" rel="noopener">Dokdek</a></li>
-        <li><a href="https://www.baka-tsuki.org/project/index.php?title=User:LucasP" rel="noopener">LucasP</a></li>
+        <li class="leader"><a href="https://www.baka-tsuki.org/project/index.php?title=User:Noir" rel="noopener">Gauche Suede</a></li>
         <li><a href="https://www.baka-tsuki.org/project/index.php?title=User:NaokiP" rel="noopener">NaokiP</a></li>
         <li><a href="https://www.baka-tsuki.org/project/index.php?title=User:Phirb" rel="noopener">Phirb</a></li>
         <li><a href="https://www.baka-tsuki.org/project/index.php?title=User:Pythagoras" rel="noopener">Pythagoras</a></li>
-        <li><a href="https://www.baka-tsuki.org/project/index.php?title=User:turbos86" rel="noopener">turbos86</a></li>
+        <li><a href="https://www.baka-tsuki.org/project/index.php?title=User:Turbos" rel="noopener">turbos86</a></li>
       </ul>
       <h3>Scripters</h3>
       <ul class="members">
@@ -65,6 +62,7 @@
       <ul id="retired" class="members" style="display: none">
         <li>Anohananonamae</li>
         <li>Avuxo</li>
+        <li>ce1545</li>
         <li>Coopa</li>
         <li>Diamondketo</li>
         <li>erengy</li>
@@ -73,34 +71,38 @@
         <li>Ingrid</li>
         <li>Kanna-Gumi</li>
         <li>kyoycz</li>
+        <li>LucasP</li>
         <li>Nekiko</li>
         <li>Nicetomeet</li>
         <li>Rainey</li>
+        <li>SirCumference</li>
         <li>Skies</li>
         <li>Sverre</li>
         <li>Tuxedosammy</li>
         <li>velocity7</li>
         <li>YoakeNoHikari</li>
       </ul>
-      <script>
-        (function() {
-          document.getElementById('reveal').onclick = function() {
-            var elem = this.nextElementSibling;
-            if(this.innerHTML === 'View') {
+      <script type="text/javascript">
+        (function(reveal) {
+          reveal.onclick = function() {
+            var elem = reveal.nextElementSibling;
+            if(reveal.innerHTML === 'View') {
               elem.removeAttribute('style');
-              this.innerHTML = 'Hide';
+              reveal.innerHTML = 'Hide';
             } else {
               elem.style.display = 'none';
-              this.innerHTML = 'View';
+              reveal.innerHTML = 'View';
             }
           };
-        })();
+        })(document.getElementById('reveal'));
       </script>
       <noscript>
-        <style type="text/css">#reveal{display:none}#retired{display:block!important}</style>
+        <style type="text/css">
+          #reveal { display: none }
+          #retired { display: block !important }
+        </style>
       </noscript>
     </div>
   </body>
 </html>
-
 

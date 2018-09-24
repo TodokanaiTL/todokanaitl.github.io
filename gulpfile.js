@@ -12,7 +12,7 @@ const paths = {
   styles: {
     src: './styles/src/*.scss',
     dest: './styles/dist/*.min.css',
-    root(dir) { return `./styles/${dir}` }
+    root: dir => `./styles/${dir}`
   }
 };
 
