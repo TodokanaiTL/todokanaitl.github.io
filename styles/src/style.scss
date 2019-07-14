@@ -49,9 +49,17 @@ $colors: (
   }
 }
 
+@font-face {
+  font-family: 'Bellota';
+  src: url('/res/fonts/webfont/Bellota-Regular.eot');
+  src: url('/res/fonts/webfont/Bellota-Regular.eot?#iefix') format('embedded-opentype'), url('/res/fonts/webfont/Bellota-Regular.woff2') format('woff2'), url('/res/fonts/webfont/Bellota-Regular.woff') format('woff'), url('/res/fonts/ttf/Bellota-Regular.ttf') format('truetype'), url('/res/fonts/otf/Bellota-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   @include color(black, white);
-  font-family: 'BellotaRegular', sans-serif;
+  font-family: 'Bellota', sans-serif;
   font-weight: bold;
   font-size: 16px;
   margin: 0;

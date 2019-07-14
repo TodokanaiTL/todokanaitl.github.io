@@ -1,0 +1,3 @@
+[submodule "res/fonts"]
+    path = res/fonts
+    url = https://github.com/kemie/Bellota-Font
