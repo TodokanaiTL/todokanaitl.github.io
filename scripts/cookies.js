@@ -33,4 +33,3 @@ window.addEventListener('hashchange', function() {
     __cookiePolicy('none');
   }
 });
-

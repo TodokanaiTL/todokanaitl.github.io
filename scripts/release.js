@@ -45,4 +45,3 @@
         '"noopener" target="#null">Download WA2_patch.exe</a>';
     });
 })();
-

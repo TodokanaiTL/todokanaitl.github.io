@@ -28,12 +28,12 @@ gulp.task('build', () => {
     .pipe(gulp.dest(paths.styles.root('dist')));
 });
 
-gulp.task('watch:css', ['build'], (done) => {
+gulp.task('watch:css', gulp.series(['build'], (done) => {
   server.stream({match: '**/*.css'});
   done();
-});
+}));
 
-gulp.task('default', ['build'], () => {
+gulp.task('default', gulp.series(['build'], () => {
   server.init({
     files: paths.styles.dest,
     notify: false,
@@ -41,7 +41,6 @@ gulp.task('default', ['build'], () => {
     server: './',
     ui: false
   });
-  gulp.watch(paths.styles.src, ['watch:css']);
-  gulp.watch(paths.pages).on('change', server.reload);
-});
-
+  gulp.watch(paths.styles.src, gulp.parallel('watch:css'));
+  gulp.watch(paths.pages).on('change', gulp.parallel(server.reload));
+}));
