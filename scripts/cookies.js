@@ -1,6 +1,7 @@
-function __cookiePolicy(style) {
-  document.getElementById('cookies').style.display = style;
+function __cookiePolicy(display) {
+  document.getElementById('cookies').style.display = display;
 }
+
 window.addEventListener('load', function() {
   window.cookieconsent.initialise({
     palette: {
@@ -26,10 +27,7 @@ window.addEventListener('load', function() {
   });
   if(window.location.hash === '#cookies') __cookiePolicy('block');
 });
+
 window.addEventListener('hashchange', function() {
-  if(window.location.hash === '#cookies') {
-    __cookiePolicy('block');
-  } else {
-    __cookiePolicy('none');
-  }
+  __cookiePolicy(window.location.hash === '#cookies' ? 'block' : 'none');
 });

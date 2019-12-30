@@ -8,6 +8,8 @@ $colors: (
   white: snow
 );
 
+$bellota: 'https://cdn.statically.io/gh/kemie/Bellota-Font/35826a1/webfont/';
+
 @mixin color($bg: null, $fg: null) {
   $type: (background-color: $bg, color: $fg);
   @each $key, $val in $type {
@@ -27,12 +29,12 @@ $colors: (
   }
 }
 
-@mixin snowflake() {
-  $cont: (after: ' \2744', before: '\2744\ ');
-  @each $key, $val in $cont {
-    &::#{$key} {
-      content: quote($val);
-      @include color($fg: blue-s);
+@mixin snowflake($padding: false) {
+  &::before, &::after {
+    content: unquote('"\\2744"');
+    @include color($fg: blue-s);
+    @if $padding {
+      padding: 0 0.25em;
     }
   }
 }
@@ -41,7 +43,7 @@ $colors: (
   position: relative;
   display: inline-block;
   &:hover::after {
-    content: url(#{$link});
+    content: url('#{$link}');
     position: absolute;
     display: inline-block;
     left: 50%;
@@ -51,15 +53,15 @@ $colors: (
 
 @font-face {
   font-family: 'Bellota';
-  src: url('/res/fonts/webfont/Bellota-Regular.eot');
-  src: url('/res/fonts/webfont/Bellota-Regular.eot?#iefix') format('embedded-opentype'), url('/res/fonts/webfont/Bellota-Regular.woff2') format('woff2'), url('/res/fonts/webfont/Bellota-Regular.woff') format('woff'), url('/res/fonts/ttf/Bellota-Regular.ttf') format('truetype'), url('/res/fonts/otf/Bellota-Regular.otf') format('opentype');
+  src: url('#{$bellota}Bellota-Regular.woff2') format('woff2'), url('#{$bellota}Bellota-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 body {
   @include color(black, white);
-  font-family: 'Bellota', sans-serif;
+  font-family: 'Bellota', 'Georgia', serif;
   font-weight: bold;
   font-size: 16px;
   margin: 0;
@@ -249,7 +251,7 @@ a {
       display: block;
       text-align: center;
       margin-bottom: -2px;
-      @include snowflake();
+      @include snowflake(true);
     }
     .divider { display: none }
   }

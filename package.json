@@ -1,6 +1,6 @@
 {
   "name": "todokanaitl.github.io",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Todokanai TL's web page",
   "repository": "github:TodokanaiTL/todokanaitl.github.io",
   "author": "ObserverOfTime <chronobserver@disroot.org>",
@@ -30,6 +30,6 @@
     "last 3 major versions",
     "chrome >= 49",
     "ff >= 38",
-    "ie > 11"
+    "!ie"
   ]
 }
