@@ -28,7 +28,7 @@
     var ul = document.getElementById('release-notes');
     data.body.split('\r\n').forEach(function(e) {
       var li = document.createElement('li');
-      li.innerHTML = e.replace(/- /, '');
+      li.innerHTML = e.replace(/^[*-] /, '');
       ul.appendChild(li);
     });
     var dmm = document.getElementById('dmm');
