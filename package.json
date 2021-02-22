@@ -1,6 +1,6 @@
 {
   "name": "todokanaitl.github.io",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Todokanai TL's web page",
   "repository": "github:TodokanaiTL/todokanaitl.github.io",
   "author": "ObserverOfTime <chronobserver@disroot.org>",
@@ -11,19 +11,19 @@
     "build": "gulp build"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.1",
-    "browser-sync": "^2.26.13",
+    "autoprefixer": "^10.2.4",
+    "browser-sync": "^2.26.14",
     "cssnano": "^4.1.0",
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.0.1",
-    "postcss": "^8.2.4",
+    "postcss": "^8.2.6",
     "postcss-preset-env": "^6.0.6"
   },
   "resolutions": {
-    "graceful-fs": "^4.2.3",
-    "lodash": "^4.17.20",
+    "graceful-fs": "^4.2.6",
+    "lodash": "^4.17.21",
     "minimatch": "^3.0.2",
     "node-gyp": "^7.1.2"
   },
