@@ -1,0 +1,250 @@
+@colors: {
+  black: #111;
+  blue-c: #14A7D0;
+  blue-r: royalblue;
+  blue-s: skyblue;
+  blurple: #7289DA;
+  gray: #252E39;
+  white: snow;
+  red: tomato;
+}
+
+@bellota: "https://cdn.statically.io/gh/kemie/Bellota-Font/35826a1/webfont/";
+
+.snowflake (@padding: false) {
+  &::before, &::after {
+    content: "\2744";
+    color: @colors[blue-s];
+    & when (@padding) {
+      padding: 0 0.25em;
+    }
+  }
+}
+
+.badge (@link) {
+  position: relative;
+  display: inline-block;
+  &:hover::after {
+    content: url("@{link}");
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    transform: translate(-50%, -80%);
+  }
+}
+
+@font-face {
+  font-family: "Bellota";
+  src+: url("@{bellota}Bellota-Regular.woff2") format("woff2");
+  src+: url("@{bellota}Bellota-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Bellota", "Georgia", serif;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+  color: @colors[white];
+  background-color: @colors[black];
+}
+
+header {
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 0.5vh;
+  min-height: 155px;
+  height: 20vw;
+  width: 100%;
+}
+
+h2 {
+  color: @colors[blue-s];
+  font-size: 35px;
+  text-shadow: 0 0 2px @colors[blue-c];
+}
+
+h3 {
+  .snowflake();
+  font-size: 28px;
+  line-height: 33px;
+  margin: 1px 0;
+}
+
+hr {
+  color: @colors[blue-c];
+  width: 50vw;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#links {
+  background-color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  margin: 5px 5px 0;
+  padding: 2px 4px;
+  border-radius: 5px;
+  float: right;
+  .divider {
+    color: @colors[blue-s];
+    padding: 0 5px;
+  }
+}
+
+#wrapper {
+  text-align: center;
+  width: auto;
+  font-size: 20px;
+  h2 { margin: 0 }
+  img { margin: 6px 0 0 }
+  > div {
+    margin: -2px 0;
+    line-height: 28px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    li {
+      color: @colors[blue-s];
+      line-height: 25px;
+    }
+  }
+  #dmm {
+    font-size: 22px;
+    margin: 10px 0 0;
+    padding: 0 7px;
+  }
+  #issues {
+    font-style: italic;
+    margin: 10px 0;
+  }
+  #retired { margin-top: 0 }
+}
+
+.patch a { color: @colors[blue-r]; }
+
+#reveal {
+  display: inline-block;
+  margin: 7px 0;
+  padding: 5px 7px;
+  border: 2px solid @colors[blue-r];
+  border-radius: 3px;
+  user-select: none;
+  cursor: pointer;
+}
+
+#cookies {
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  a { color: @colors[blue-c]; }
+  .content {
+    width: 50%;
+    margin: 20% auto;
+    padding: 20px;
+    font-size: 18px;
+    background-color: @colors[gray];
+    box-shadow: 0 0 5px 5px @colors[black];
+    border-radius: 15px;
+    p {
+      margin-top: -15px;
+      display: inline-block;
+    }
+  }
+  .close {
+    float: right;
+    transform: translate(60%, -60%);
+    font-size: 35px;
+    cursor: pointer;
+    user-select: none;
+    &:hover, &:focus {
+      color: @colors[red];
+    }
+  }
+}
+
+.cc-window {
+  font-family: inherit;
+  font-size: 17px;
+  box-shadow: 0 0 5px 5px #111;
+  .cc-message { line-height: 22px }
+  .cc-btn { font-size: 18px }
+}
+
+.todokanai.short { display: none }
+
+.intro { padding: 0 2% }
+
+#latest a { .badge("https://img.shields.io/github/release-date/TodokanaiTL/WA2EnglishPatch.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpFNTE3OEEyQTk5QTAxMUUyOUExNUJDMTA0NkE4OTA0RCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpFNTE3OEEyQjk5QTAxMUUyOUExNUJDMTA0NkE4OTA0RCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkU1MTc4QTI4OTlBMDExRTI5QTE1QkMxMDQ2QTg5MDREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU1MTc4QTI5OTlBMDExRTI5QTE1QkMxMDQ2QTg5MDREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+m4QGuQAAAyRJREFUeNrEl21ojWEYx895TDPbMNlBK46IUiNmPvHBSUjaqc0H8pF5+aDUKPEBqU2NhRQpX5Rv5jWlDIWlMCv7MMSWsWwmb3tpXub4XXWdPHvc9/Gc41nu+nedc7/8r/99PffLdYdDPsvkwsgkTBwsA/PADJCnzX2gHTwBt8Hl7p537/3whn04XoDZDcpBlk+9P8AFcAghzRkJwPF4zGGw0Y9QS0mAM2AnQj77FqCzrtcwB1Hk81SYojHK4DyGuQ6mhIIrBWB9Xm7ug/6B/nZrBHBegrkFxoVGpnwBMSLR9EcEcC4qb8pP14BWcBcUgewMnF3T34VqhWMFkThLJAalwnENOAKiHpJq1FZgI2AT6HZtuxZwR9GidSHtI30jOrbawxlVX78/AbNfhHlomEUJJI89O2MqeE79T8/nk8nMBm/dK576hZgmA3cp/R4l9/UeSxiHLVIlNm4nFfT0bxyuIj7LHRTKai+zdJobwMKzcZSJb0ePV5PKN+BqAAKE47UlMnERELMM3EdYP/yrd+XYb2mOiYBiQ8OQnoRBlXrl9JZix7D1pHTazu4MoyBcnYamqAjIMTR8G4FT8LuhLsexXYYjICBiqhQBvYb6fLZIJCjPypVvaOoVAW2WcasCnL2Nq82xHJNSqlCeFcDshaPK0twkAhosjZL31QYw+1rlMpWGMArl23SBsZZO58F2tlJXmjOXS+s4WGvpMiBJT/I2PInZ6lIs9/hBsNS1hS6BG0DSqmYEDRlCXQrmy50P1oDRKTSegmNbUsA0zDMwRhPJXeCE3vWLPQMvan6X8AgIa1vcR4AkGZkDR4ejJ1UHpsaVI0g2LInpOsNFUud1rhxSV+fzC9Woz2EZkWQuja7/B+jUrgtIMpy9YCW4n4K41YfzRneW5E1KJTe4B2Zq1Q5EHEtj4U3AfEzR5SVY4l7QYQPJdN2as7RKBF0BPZqqH4VgMAMBL8Byxr7y8zCZiDlnOcEKIPmUpgB5Z2ww5RdOiiRiNajUmWda5IG6WbhsyY2fx6m8gLcoJDJFkH219M3We1+cnda93pfycZpIJEL/s/wSYADmOAwAQgdpBAAAAABJRU5ErkJggg==&label=Released"); }
+
+.leader { text-decoration: underline @colors[blue-s] }
+
+.news, .faq {
+  > div:target {
+    border: 2px dashed @colors[blue-r];
+    padding: 0 0 5px;
+  }
+}
+
+.date, .question {
+  color: @colors[blue-c];
+  margin-bottom: 5px;
+}
+
+.post, .answer { padding: 0 25vh }
+
+.answer a { color: @colors[blue-r]; }
+
+.discord {
+  color: @colors[blurple];
+  .badge("https://img.shields.io/discord/195731233655750656.svg?logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAAolBMVEUAAAByidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidpyidplWcKgAAAANXRSTlMAM6FEg3LrnvHXlOWEd3GWhzHu7Piw2Nma%2FtVfpqSgTPTFbSQlLvM8p16%2FWzq4gqo5lVwOT9pJJw8AAABvSURBVHgBY8AArMLinEAgxiYgCOIKmcKABIjLAeeyQ7haqgbqKkxQroIpI4gyhnJN1RgM9TR1GRRNmcBcKQYTHWVtBllTGRBXxFTaSF9DSZ7DVA6LydwQNpskhMvMxcPCwsLPyGoqiuJaXj509wMA0uEPg%2BuUBPgAAAAASUVORK5CYII%3D&label=Discord&colorB=7289DA");
+}
+
+#disqus_thread { padding: 0 10px }
+
+@media screen and (min-width: 1300px) {
+  .post, .answer { padding: 0 calc(25vh + 10%) }
+}
+
+@media screen and (max-width: 1000px) {
+  .post, .answer { padding: 0 10vh }
+}
+
+@media screen and (max-width: 900px) {
+  .question {
+    &::before, &::after { display: block }
+  }
+}
+
+@media screen and (max-width: 482px) {
+  #links {
+    margin: 6px 3px;
+    a {
+      display: block;
+      text-align: center;
+      margin-bottom: -2px;
+      .snowflake(true);
+    }
+    .divider { display: none }
+  }
+  .todokanai {
+    &.short { display: inherit }
+    &.full { display: none }
+  }
+  .date, .question {
+    &::before, &::after { display: none }
+  }
+  .post, .answer { padding: 0 5vh }
+}
+
+:-moz-focusring { outline: none }

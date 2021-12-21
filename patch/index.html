@@ -8,10 +8,11 @@
     <link href="/res/favicon/safari-pinned-tab.svg" rel="mask-icon" color="#87ceeb">
     <link href="/res/favicon/favicon.ico" rel="shortcut icon">
     <link href="/styles/dist/style.min.css" type="text/css" rel="stylesheet">
-    <title>Todokanai TL :: Chat</title>
+    <script src="/scripts/release.js" defer></script>
+    <title>Todokanai TL :: Patch</title>
   </head>
   <body>
-    <header style="background-image: url('/res/images/header-chat.png')">
+    <header style="background-image: url('/res/images/header-patch.png')">
       <nav id="links">
         <a href="/">Home</a>
         <span class="divider">&#x2744;</span>
@@ -26,26 +27,29 @@
         <a href="/chat/">Chat</a>
       </nav>
     </header>
-    <main id="wrapper">
-      <h2>Chat</h2>
+    <main id="wrapper" class="patch">
+      <h2>Patch</h2>
       <img src="/res/images/logo.png" height="80" width="80" alt="Snowflake"/>
-      <div>You can leave a comment here or chat with us on <a href="https://discord.gg/5rrxEUN" class="discord" rel="noopener" target="_blank">Discord</a>.</div>
-      <hr>
-      <div id="disqus_thread"></div>
-      <script>
-        var disqus_config = function() {
-          this.page.url = 'https://todokanaitl.github.io';
-          this.page.identifier = 'chat';
-        };
-        (function() {
-          var d = document, s = d.createElement('script');
-          s.src = 'https://todokanaitl.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', Number(new Date()));
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
-      <script id="dsq-count-scr" src="https://todokanaitl.disqus.com/count.js" async></script>
+      <h3> Includes </h3>
+      <ul id="features">
+        <li>English executable</li>
+        <li>Introductory Chapter</li>
+        <li>Closing Chapter &amp; Coda</li>
+        <li>Video &amp; audio-only subs</li>
+        <li>Translated IC CGs</li>
+        <li>Translated novels</li>
+      </ul>
+      <h3 id="latest">
+        <noscript>
+          <a href="https://github.com/TodokanaiTL/WA2EnglishPatch/releases/latest/download/WA2_patch.exe"
+             rel="noopener" download="WA2_patch.exe" type="application/vnd.microsoft.portable-executable">Download</a>
+        </noscript>
+      </h3>
+      <ul id="release-notes"></ul>
+      <div id="issues">
+        Patch bugs should be submitted on <a href="https://discord.gg/5rrxEUN" rel="noopener" target="_blank">Discord</a>.<br>
+        Installer bugs should be submitted on <a href="https://github.com/TodokanaiTL/WA2EnglishPatch/issues" rel="noopener" target="_blank">GitHub</a>.
+      </div>
     </main>
   </body>
 </html>

@@ -1,8 +1,9 @@
 const gulp = require('gulp');
-const postcss = require('gulp-postcss');
-const sass = require('gulp-sass');
+const less = require('gulp-less');
 const rename = require('gulp-rename');
 const server = require('browser-sync').create();
+const Autoprefix = require('less-plugin-autoprefix');
+const CleanCSS = require('less-plugin-clean-css');
 
 const paths = {
   pages: [
@@ -10,22 +11,18 @@ const paths = {
     '!./node_modules/**'
   ],
   styles: {
-    src: './styles/src/*.scss',
-    dest: './styles/dist/*.min.css',
-    root: dir => `./styles/${dir}`
+    src: 'styles/src/*.less',
+    dest: 'styles/dist',
   }
 };
 
 gulp.task('build', () => {
   return gulp.src(paths.styles.src)
-    .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([
-      require('postcss-preset-env')({stage: 3}),
-      require('autoprefixer')(),
-      require('cssnano')()
-    ]))
+    .pipe(less({
+      plugins: [new Autoprefix(), new CleanCSS()]
+    }))
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest(paths.styles.root('dist')));
+    .pipe(gulp.dest(paths.styles.dest));
 });
 
 gulp.task('watch:css', gulp.series(['build'], (done) => {
